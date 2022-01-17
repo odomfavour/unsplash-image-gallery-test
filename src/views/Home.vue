@@ -41,7 +41,6 @@ export default {
   methods: {
     showImage(photo) {
       this.selectedImage = photo;
-      console.log(this.selectedImage);
       this.isVisible = true;
     },
     toggleModal() {
@@ -49,9 +48,7 @@ export default {
     },
     handleSearch(value) {
       this.loading = true;
-      // console.log(value)
       let myUrl = `${this.searchUri}${this.apiKey}&page=1&query=${value}`;
-      // console.log(myUrl)
       if (value != "") {
         return axios
           .get(myUrl)
@@ -86,7 +83,7 @@ export default {
       .then((response) => {
         this.searchPhotos = response.data;
         this.loading = false;
-        console.log(this.searchPhotos);
+        // console.log(this.searchPhotos);
       })
       .catch((error) => {
         console.log(error);
