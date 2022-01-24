@@ -56,10 +56,9 @@ export default {
             this.searchPhotos = response.data.results;
             console.log("search", this.searchPhotos);
             this.loading = false;
-            // console.log("search", response.data);
           })
           .catch((error) => {
-            console.log(error);
+            console.error(error);
           });
       } else {
         return axios
@@ -67,26 +66,23 @@ export default {
           .then((response) => {
             this.searchPhotos = response.data;
             this.loading = false;
-            console.log(this.searchPhotos);
           })
           .catch((error) => {
-            console.log(error);
+            console.error(error);
           });
       }
     },
   },
   async created() {
-    // console.log(this.uri)
     this.loading = true;
     return axios
       .get(`${this.uri}${this.apiKey}`)
       .then((response) => {
         this.searchPhotos = response.data;
         this.loading = false;
-        // console.log(this.searchPhotos);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   },
 };
