@@ -54,7 +54,15 @@ export default {
   grid-gap: 30px;
   /* grid-auto-rows: 20px; */
   margin: -60px auto 0 auto;
+  @media (max-width: 427px) {
+    grid-template-columns: repeat(1, 1fr) !important;
+    width: 80%;
+  }
 
+  @media (max-width: 769px) {
+    grid-template-columns: repeat(2, 1fr);
+     width: 80%;
+  }
   .card {
     height: 400px;
     background: chocolate;
@@ -62,6 +70,9 @@ export default {
     border-radius: 8px;
     cursor: pointer;
     position: relative;
+    @media (max-width: 769px) {
+       height: 300px;
+      }
 
     &:nth-child(odd),
     &:nth-child(odd) img {
@@ -73,6 +84,13 @@ export default {
     &:nth-child(6),
     &:nth-child(10) {
       margin-top: -90px;
+      @media (max-width: 427px) {
+        margin-top: 0;
+      }
+
+      @media (max-width: 769px) {
+        margin-top: 0;
+      }
     }
 
     img {
@@ -82,6 +100,9 @@ export default {
       object-fit: cover;
       border-radius: 8px;
       cursor: pointer;
+      @media (max-width: 769px) {
+       height: 300px;
+      }
     }
     .image-info {
       margin-top: -80px;
@@ -95,5 +116,4 @@ export default {
     }
   }
 }
-
 </style>

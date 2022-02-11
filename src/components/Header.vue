@@ -43,6 +43,9 @@ header {
     width: 70%;
     margin: 0 auto;
     position: relative;
+    @media (max-width: 769px) {
+     width: 80%;
+  }
 
     input {
       width: 100%;
